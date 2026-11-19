@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523137eaf5a266340925c10c558edf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+  MoveKeyVector2: {x: 0, y: 0}
 --- !u!4 &281916170
 Transform:
   m_ObjectHideFlags: 0
@@ -157,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 281916168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.19665, y: 0, z: 1.99216}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -757,7 +758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc1fe1021154e64896a508178d35933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NejikoMove
-  moveSpeed: 1
+  moveSpeed: 5
+  playerInput: {fileID: 281916169}
 --- !u!114 &2132767982
 MonoBehaviour:
   m_ObjectHideFlags: 0

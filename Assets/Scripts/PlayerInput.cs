@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     private InputAction jumpAction;
     private InputAction moveAction;
+    public Vector2 MoveKeyVector2 = Vector2.zero;
 
     private void Start()
     {
@@ -15,11 +17,11 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        if(jumpAction.triggered)
+        if (jumpAction.triggered)
         {
             Debug.Log("ƒWƒƒƒ“ƒv‚µ‚½");
         }
 
-        Vector2 moveInput = moveAction.ReadValue<Vector2>();
+        MoveKeyVector2 = moveAction.ReadValue<Vector2>();
     }
 }

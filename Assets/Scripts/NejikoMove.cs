@@ -6,7 +6,13 @@ public class NejikoMove : MonoBehaviour
     // ねじ子の移動
     // -> 1mをmoveSpeed秒で移動する
     [SerializeField]
-    private float moveSpeed = 1.0f; 
+    private float moveSpeed = 1.0f;
+
+    [SerializeField]
+    private PlayerInput playerInput;
+
+    private bool isRightMove = false;
+    private bool isLeftMove = false;
 
     // ねじ子の移動は毎フレーム必ず行われる
 
@@ -39,5 +45,28 @@ public class NejikoMove : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("run", false);
         }
+
+        if (playerInput.MoveKeyVector2.x >= 0.3f && isRightMove == false)
+        {
+            isRightMove = true;
+            Debug.Log("右に移動");
+            this.transform.position += new Vector3(1,0,0);
+        }
+        else if (playerInput.MoveKeyVector2.x <= 0.3f)
+        {
+            isRightMove = false;
+        }
+
+        if (playerInput.MoveKeyVector2.x <= -0.3f && isLeftMove == false)
+        {
+            isLeftMove = true;
+            Debug.Log("左に移動");
+            this.transform.position += new Vector3(-1, 0, 0);
+        }
+        else if (playerInput.MoveKeyVector2.x >= -0.3f)
+        {
+            isLeftMove = false;
+        }
+
     }
 }
